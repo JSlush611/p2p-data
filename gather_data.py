@@ -36,7 +36,7 @@ def parse_and_store_results(results, race_date):
         print("Parsing results...")
 
         place = result.get('overallRank')
-        name = result.get('displayName')
+        name = result.get('displayName').lower()  # Convert the name to lowercase
         gender = result.get('gender')
         time = result.get('time', {}).get('timeInMillis')
         
@@ -79,7 +79,8 @@ events = [
     {"event_id": 766892, "event_course_id": 1310567, "race_date": '2019-08-03'},
     {"event_id": 976979, "event_course_id": 2088562, "race_date": '2021-08-07'},
     {"event_id": 1026801, "event_course_id": 2278451, "race_date": '2022-08-06'},
-    {"event_id": 1057715, "event_course_id": 2388869, "race_date": '2023-08-05'}
+    {"event_id": 1057715, "event_course_id": 2388869, "race_date": '2023-08-05'},
+    {"event_id": 1086655, "event_course_id": 2500154, "race_date": '2024-08-03'},
 ]
 
 all_results_df = pd.DataFrame()
